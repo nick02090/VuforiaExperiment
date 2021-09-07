@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "FFY5T18122009858",
         "name": "com.DefaultCompany.VuforiaExperiment",
-        "processId": 15566,
+        "processId": 3455,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -16,26 +16,38 @@
         },
         {
             "deviceId": "FFY5T18122009858",
-            "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 570,
+            "name": "com.whatsapp",
+            "processId": 11487,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 12725,
+            "processId": 20248,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 14661,
+            "processId": 21525,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 15566,
+            "processId": 26718,
+            "exited": true
+        },
+        {
+            "deviceId": "FFY5T18122009858",
+            "name": "com.DefaultCompany.VuforiaExperiment",
+            "processId": 1721,
+            "exited": true
+        },
+        {
+            "deviceId": "FFY5T18122009858",
+            "name": "com.DefaultCompany.VuforiaExperiment",
+            "processId": 3455,
             "exited": false
         }
     ],

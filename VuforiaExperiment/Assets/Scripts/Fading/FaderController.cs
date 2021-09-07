@@ -1,23 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fading
 {
     public class FaderController : MonoBehaviour
     {
-        [SerializeField] private Fader[] faders;
+        [SerializeField] private List<Fader> faders;
+
+        public void AddFader(Fader fader) => faders.Add(fader);
 
         public void StartFadeInAnimation()
         {
             foreach (var fader in faders)
-            {
-                fader.StartFadeInAnimation();
-            }
+                if (fader.isActiveAndEnabled)
+                    fader.StartFadeInAnimation();
         }
 
         public void StartFadeOutAnimation()
         {
             foreach (var fader in faders)
-                fader.StartFadeOutAnimation();
+                if (fader.isActiveAndEnabled)
+                    fader.StartFadeOutAnimation();
         }
     }
 }

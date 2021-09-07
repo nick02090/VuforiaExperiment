@@ -7,18 +7,15 @@ namespace Fading
     public class FaderText : Fader
     {
         private Text text;
-        [Range(0.0f, 1.0f)]
-        private float textAlpha;
-        private Color textColor;
 
         private void Awake()
         {
             text = GetComponent<Text>();
-            textAlpha = text.color.a;
-            textColor = text.color;
+            Alpha = text.color.a;
+            Color = text.color;
         }
 
-        public override void StartFadeInAnimation() => StartCoroutine(FadeIn(text, textAlpha, textColor));
-        public override void StartFadeOutAnimation() => StartCoroutine(FadeOut(text, textAlpha, textColor));
+        public override void StartFadeInAnimation() => StartCoroutine(FadeIn(text));
+        public override void StartFadeOutAnimation() => StartCoroutine(FadeOut(text));
     }
 }
