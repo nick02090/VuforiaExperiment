@@ -9,7 +9,7 @@ https://drive.google.com/file/d/1xC_IweiBQ3e0PGE_rVPaFhrRwKPFUBv-/view?usp=shari
 
 ## Release
 
-- Download apk file from here: https://drive.google.com/file/d/1CizLqBWItSXzWIEkFo2SV_PTllL74WXv/view?usp=sharing (Android only)
+- Download apk file from here: https://drive.google.com/file/d/1SBWhcT2knOM7dY2JuISPfmvzP4yXyY6s/view?usp=sharing (Android only)
   1) Enable installation of unkown apk files for your device (should be prompted during installation process (step 2))
   2) Run VuforiaExperiment.apk file to start installation
   3) Allow application to use your camera
