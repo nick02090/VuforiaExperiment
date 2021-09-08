@@ -55,14 +55,34 @@ public class DataController : MonoBehaviour
     #endregion
 
     [SerializeField] private string webDataUrl = "https://us-central1-bondroom.cloudfunctions.net/hololens";
+    [SerializeField] private float fetchDataEverySeconds = 10.0f;
 
     private string _data;
 
+    private bool dataFetchFailed = false;
+    private float lastDataTry = 0.0f;
+
     private void Start()
     {
-        successPanel.SetActive(true);
-        errorPanel.SetActive(true);
+        successPanel.SetActive(false);
+        errorPanel.SetActive(false);
         StartCoroutine(GetRequest(webDataUrl));
+    }
+
+    private void Update()
+    {
+        if (dataFetchFailed)
+        {
+            if (lastDataTry > fetchDataEverySeconds)
+            {
+                lastDataTry = 0.0f;
+                dataFetchFailed = false;
+                StartCoroutine(GetRequest(webDataUrl));
+            } else
+            {
+                lastDataTry += Time.deltaTime;
+            }
+        }
     }
 
     public IEnumerator GetRequest(string uri)
@@ -103,10 +123,12 @@ public class DataController : MonoBehaviour
             catch(Exception)
             {
                 DisplayError();
+                dataFetchFailed = true;
                 yield break;
             }
         }
 
+        dataFetchFailed = false;
         DisplayData();
     }
 
@@ -125,11 +147,14 @@ public class DataController : MonoBehaviour
 
     private void CustomizeLeftPanel(HololensData data)
     {
-        // Choose text color based on the system flags and change it on fader component
+        // Choose text color based on the system flags
         Color dataColor = data.system.isFraud ? errorColor : successColor;
         domainText.GetComponent<Fader>().Color = dataColor;
+        domainText.color = dataColor;
         timestampText.GetComponent<Fader>().Color = dataColor;
+        timestampText.color = dataColor;
         fraudText.GetComponent<Fader>().Color = dataColor;
+        fraudText.color = dataColor;
 
         // Display data
         domainText.text = $"Domain: {data.system.domain}";
@@ -142,7 +167,10 @@ public class DataController : MonoBehaviour
         for (int i = 0; i < data.components.Count; ++i)
         {
             // Instantiate row for every component
-            var component = Instantiate(componentPrefab, componentsParent.transform, false);
+            var component = Instantiate(componentPrefab, componentPrefab.transform.position, componentPrefab.transform.rotation);
+            component.transform.SetParent(componentsParent.transform, false);
+
+            // Get the child components
             var titleChild = component.transform.GetChild(0);
             var valueChild = component.transform.GetChild(1);
 
@@ -151,7 +179,7 @@ public class DataController : MonoBehaviour
             valueChild.GetComponent<Text>().text = data.components[i].value;
 
             // Offset the row
-            component.transform.GetComponent<RectTransform>().position -= componentsOffset * i * Vector3.forward;
+            component.transform.GetComponent<RectTransform>().anchoredPosition -= componentsOffset * i * Vector2.up;
 
             // Add text fields to fader controller
             faderController.AddFader(titleChild.GetComponent<Fader>());

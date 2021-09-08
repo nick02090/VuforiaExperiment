@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "FFY5T18122009858",
         "name": "com.DefaultCompany.VuforiaExperiment",
-        "processId": 3455,
+        "processId": 28089,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -16,38 +16,44 @@
         },
         {
             "deviceId": "FFY5T18122009858",
-            "name": "com.whatsapp",
-            "processId": 11487,
+            "name": "com.google.android.packageinstaller",
+            "processId": 8230,
+            "exited": false
+        },
+        {
+            "deviceId": "FFY5T18122009858",
+            "name": "com.DefaultCompany.VuforiaExperiment",
+            "processId": 21653,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 20248,
+            "processId": 22750,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 21525,
+            "processId": 23869,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 26718,
+            "processId": 25438,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 1721,
+            "processId": 26826,
             "exited": true
         },
         {
             "deviceId": "FFY5T18122009858",
             "name": "com.DefaultCompany.VuforiaExperiment",
-            "processId": 3455,
+            "processId": 28089,
             "exited": false
         }
     ],
